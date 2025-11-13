@@ -1,0 +1,17 @@
+version: "3.1"
+
+stories:
+- story: check contribution
+  steps:
+  - intent: ask_contribution_status
+  - action: utter_contribution_status
+
+- story: submit feedback
+  steps:
+  - intent: submit_feedback
+  - action: utter_feedback_ack
+
+- story: request help
+  steps:
+  - intent: request_help
+  - action: utter_help_response

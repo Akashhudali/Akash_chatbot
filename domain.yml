@@ -1,0 +1,101 @@
+version: "3.1"
+intents:
+  - ask_contribution_status
+  - submit_feedback
+  - request_help
+  - remove_contact
+  - add_contact
+  - list_contacts
+  - greet
+  - ask_c_program
+entities:
+  - email
+  - name
+actions:
+  - remove_contact
+  - add_contact
+  - list_contacts
+  - action_show_c_program
+  - action_show_python_program
+  - action_show_java_program
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+slots:
+  return_value:
+    type: text
+    influence_conversation: false
+  remove_contact_confirmation:
+    type: bool
+    influence_conversation: false
+  add_contact_confirmation:
+    type: bool
+    influence_conversation: false
+  contacts_list:
+    type: list
+    influence_conversation: false
+  add_contact_handle:
+    type: text
+    influence_conversation: false
+  add_contact_name:
+    type: text
+    influence_conversation: false
+  remove_contact_handle:
+    type: text
+    influence_conversation: false
+responses:
+  utter_contribution_status:
+    - text: "You've submitted all required items. Great job!"
+  utter_feedback_ack:
+    - text: "Thanks for your feedback. We'll review it shortly."
+  utter_help_response:
+    - text: "I'm here to help. What do you need assistance with?"
+  utter_contact_not_in_list:
+    - text: "That contact is not in your list."
+  utter_remove_contact_error:
+    - text: "There was an error while trying to remove the contact."
+  utter_remove_contact_cancelled:
+    - text: "Okay, the contact removal has been cancelled."
+  utter_remove_contact_success:
+    - text: "Contact removed successfully."
+  utter_ask_add_contact_handle:
+    - text: "Please provide the contact handle you'd like to add."
+  utter_ask_add_contact_name:
+    - text: "What's the name of the contact you'd like to add?"
+  utter_ask_add_contact_confirmation:
+    - text: "Do you want to add this contact?"
+  utter_add_contact_cancelled:
+    - text: "Okay, the contact addition has been cancelled."
+  utter_contact_added:
+    - text: "Contact added successfully."
+  utter_contact_already_exists:
+    - text: "This contact already exists in your list."
+  utter_add_contact_error:
+    - text: "There was an error while adding the contact."
+  utter_list_contacts:
+    - text: "Here are your saved contacts."
+  utter_no_contacts:
+    - text: "You don't have any contacts saved yet."
+  utter_ask_remove_contact_handle:
+    - text: "Please provide the contact handle you'd like to remove."
+  utter_ask_remove_contact_confirmation:
+    - text: "Are you sure you want to remove this contact?"
+  utter_greet:
+    - text: "Hi there! How can I assist you today?"
+  utter_ask_c_program:
+    - text: |
+        Sure! Here's a simple C program to add two numbers:
+
+        ```c
+        #include <stdio.h>
+        int main() {
+          int a, b, sum;
+          printf("Enter two numbers: ");
+          scanf("%d %d", &a, &b);
+          sum = a + b;
+          printf("Sum = %d", sum);
+          return 0;
+        }
+        ```
+      metadata:
+        no_format: true

@@ -1,0 +1,22 @@
+version: "3.1"
+
+rules:
+  - rule: respond to greeting
+    steps:
+      - intent: greet
+      - action: utter_greet
+      
+  - rule: show C program
+    steps:
+      - intent: ask_c_program
+      - action: action_show_c_program
+
+  - rule: show Python program
+    steps:
+      - intent: ask_python_program
+      - action: action_show_python_program
+
+  - rule: show Java program
+    steps:
+      - intent: ask_java_program
+      - action: action_show_java_program

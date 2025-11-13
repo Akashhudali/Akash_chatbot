@@ -1,0 +1,14 @@
+assistant_id: akash-bot
+recipe: default.v1
+language: en
+
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: DIETClassifier
+  - name: EntitySynonymMapper
+policies:
+  - name: RulePolicy
+  - name: MemoizationPolicy
+  - name: TEDPolicy

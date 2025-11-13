@@ -1,0 +1,32 @@
+version: "3.1"
+
+nlu:
+- intent: ask_contribution_status
+  examples: |
+    - What's my contribution status?
+    - Have I submitted everything?
+    - Did I miss any tasks?
+
+- intent: submit_feedback
+  examples: |
+    - I want to give feedback
+    - Here's my suggestion
+    - Can I share some thoughts?
+
+- intent: request_help
+  examples: |
+    - I need help
+    - Can you assist me?
+    - I'm stuck on something
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey there
+
+- intent: ask_c_program
+  examples: |
+    - can you give a C program to add two numbers
+    - show me a C code for addition
+    - write a C program to add numbers
+    -can you give a simple c program
